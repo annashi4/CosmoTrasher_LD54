@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class GarbageSpawner : MonoBehaviour
 {
-	[SerializeField] private Garbage[] _garbages;
 	[SerializeField] private int _garbagesCount;
 
 	private List<Garbage> _spawnedGarbage;
+	private Garbage[] _garbages;
 
 	private void Start()
 	{
+		_garbages = GetComponentsInChildren<Garbage>();
+		
 		foreach (var item in _garbages)
 		{
 			item.ClearGarbage();
