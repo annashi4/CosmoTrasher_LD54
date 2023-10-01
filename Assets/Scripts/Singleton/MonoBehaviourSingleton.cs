@@ -22,4 +22,12 @@ public class MonoBehaviourSingleton<T> : MonoBehaviour
 			return _instance;
 		}
 	}
+
+	protected virtual void Awake()
+	{
+		if (_instance != null)
+		{
+			Destroy(_instance.gameObject);
+		}
+	}
 }

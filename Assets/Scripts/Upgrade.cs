@@ -1,11 +1,15 @@
 ﻿using DG.Tweening;
+using TMPro;
 using UnityEngine;
 
 public abstract class Upgrade : MonoBehaviour
 {
 	[SerializeField] protected int _price = 1;
 	[SerializeField] protected Transform _model;
+	[SerializeField] protected TextMeshProUGUI _text;
+	[SerializeField] private GameObject _nextUpgrade;
 	
+
 	protected bool _isInside;
 
 	protected float _timerInside;
@@ -17,6 +21,8 @@ public abstract class Upgrade : MonoBehaviour
 			.SetRelative()
 			.SetEase(Ease.Linear)
 			.SetLoops(-1, LoopType.Incremental);
+
+		_text.text = $"{_price}";
 	}
 	private void Update()
 	{
@@ -43,6 +49,7 @@ public abstract class Upgrade : MonoBehaviour
 			Player.Instance.Buy();
 			gameObject.SetActive(false);
 			GameCanvas.Instance.GetScreen<PlayerIndicatorsUIScreen>(UIScreenType.INDICATORS).CompleteTimer(false);
+			_nextUpgrade?.SetActive(true);
 		}
 	}
 

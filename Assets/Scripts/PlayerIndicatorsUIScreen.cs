@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -27,15 +28,13 @@ public class PlayerIndicatorsUIScreen : UIScreen
 		_camera = Camera.main;
 	}
 
-	public override void Open()
+	public void UpdatePositions()
 	{
-		base.Open();
+		if (GameManager.Instance.PlayerRB == null)
+		{
+			return;
+		}
 		
-		UpdatePositions();
-	}
-
-	private void UpdatePositions()
-	{
 		var playerPos = GameManager.Instance.PlayerRB.position;
 		var screenPos = _camera.WorldToScreenPoint(playerPos);
 
@@ -93,6 +92,11 @@ public class PlayerIndicatorsUIScreen : UIScreen
 
 	public void CheckInventoryTips(int total, int current)
 	{
+		if (total == 0)
+		{
+			return;
+		}
+		
 		Color color;
 
 		var value = current / (float) total;
@@ -152,6 +156,8 @@ public class PlayerIndicatorsUIScreen : UIScreen
 
 		_inventoryTipPunchTween.KillTo0();
 		_inventoryTipPunchTween = _inventoryTipRoot.DOPunchScale(Vector3.one, .2f);
+		
+		UpdatePositions();
 	}
 
 	#endregion
