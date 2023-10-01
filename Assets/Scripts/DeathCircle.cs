@@ -23,6 +23,7 @@ public class DeathCircle : MonoBehaviourSingleton<DeathCircle>
 	{
 		_inDanger = false;
 		_isOut = false;
+		GameCanvas.Instance.GetScreen<MainUIScreen>(UIScreenType.MAIN).SetNormalVignette();
 	}
 
 	private void Update()
@@ -36,11 +37,13 @@ public class DeathCircle : MonoBehaviourSingleton<DeathCircle>
 		{
 			_inDanger = true;
 			AudioManager.Instance.MakeCutoff();
+			GameCanvas.Instance.GetScreen<MainUIScreen>(UIScreenType.MAIN).SetAwayVignette();
 		}
 		else if (Vector3.Distance(_player.position, transform.position) < _dangerRadius && _inDanger)
 		{
 			_inDanger = false;
 			AudioManager.Instance.UndoCutoff();
+			GameCanvas.Instance.GetScreen<MainUIScreen>(UIScreenType.MAIN).SetNormalVignette();
 		}
 
 		if (Vector3.Distance(_player.position, transform.position) >= _deathRadius)
