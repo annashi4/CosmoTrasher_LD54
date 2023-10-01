@@ -691,6 +691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mixer: {fileID: 24100000, guid: b75227ab46bcb6f4092bebc330f07621, type: 2}
+  _hookshotAsteroidClip: {fileID: 0}
 --- !u!4 &278239195
 Transform:
   m_ObjectHideFlags: 0
@@ -3940,6 +3941,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _coinsPerGarbage: 1
+  _sellDelay: 0.25
 --- !u!58 &1464066119
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5554,6 +5556,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2521805203188451025, guid: 44e590ab1c7b6034f9ee161f4b38de96, type: 3}
+      propertyPath: startScreens.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2521805203188451026, guid: 44e590ab1c7b6034f9ee161f4b38de96, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -5641,6 +5647,10 @@ PrefabInstance:
     - target: {fileID: 2521805203188451030, guid: 44e590ab1c7b6034f9ee161f4b38de96, type: 3}
       propertyPath: m_Name
       value: Game Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2521805203739149284, guid: 44e590ab1c7b6034f9ee161f4b38de96, type: 3}
+      propertyPath: _inventoryOffset.y
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44e590ab1c7b6034f9ee161f4b38de96, type: 3}

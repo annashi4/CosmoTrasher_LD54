@@ -36,7 +36,6 @@ public class PickUper : MonoBehaviourSingleton<PickUper>
 					{
 						OnPickUp?.Invoke(true, _currentItem.GetComponent<Garbage>());
 						GameData.Instance.Items++;
-						
 						GameData.Instance.UpdateUI();
 					}
 					else

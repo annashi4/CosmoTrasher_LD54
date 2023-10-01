@@ -6,6 +6,10 @@ public class AudioManager : MonoBehaviourSingleton<AudioManager>
 {
     [SerializeField] private AudioMixer _mixer;
 
+    [Header("Audio Clips")]
+    [SerializeField] private AudioClip _hookshotAsteroidClip;
+    
+    
     private Tween _cutoffTween;
     
     private void Start()

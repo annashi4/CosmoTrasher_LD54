@@ -58,5 +58,7 @@ public enum UIScreenType
     LOSE = 3,
     INDICATORS,
     TITLES,
-    MENU
+    MENU,
+    TIME,
+    SPEEDRUN_RESULT
 }

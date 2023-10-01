@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviourSingleton<GameManager>
 {
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     private bool _isReseting;
 
     public event Action OnReset;
+    public Action OnGetItem;
     
     private void Start()
     {
@@ -44,5 +46,10 @@ public class GameManager : MonoBehaviourSingleton<GameManager>
     private void Update()
     {
         PlayTime += Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }

@@ -26,7 +26,7 @@ public class LoseUIScreen : UIScreen
 
 	private void ToMenu()
 	{
-		SceneManager.LoadScene(SceneManager.GetSceneByName("Main Menu").buildIndex);
+		SceneManager.LoadScene("Menu");
 	}
 
 	public override void Open()
