@@ -25,6 +25,11 @@ public class PlayerIndicatorsUIScreen : UIScreen
 		base.Init(gameCanvas);
 		
 		_camera = Camera.main;
+	}
+
+	public override void Open()
+	{
+		base.Open();
 		
 		UpdatePositions();
 	}

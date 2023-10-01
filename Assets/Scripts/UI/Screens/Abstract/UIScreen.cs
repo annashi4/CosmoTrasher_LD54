@@ -56,5 +56,7 @@ public enum UIScreenType
     MAIN = 1,
     FADE_IN_OUT = 2,
     LOSE = 3,
-    INDICATORS
+    INDICATORS,
+    TITLES,
+    MENU
 }
